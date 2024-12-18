@@ -70,7 +70,7 @@ const Stepper = () => {
         {/* render-steps-&-name */}
         <div className=" flex justify-around">
             {CONFIG_FILE?.map((item,index)=>{
-                const isActive = currentStep === index+1;
+                const isActive = currentStep === index + 1;
                 const isCompleted = currentStep > index + 1 || isComplete;
                 return (
                     <div ref={(iRef)=>{
@@ -79,8 +79,8 @@ const Stepper = () => {
                     }} className="" key={index}>
                         <div className=" flex flex-col items-center gap-y-1">
                             <p className={`px-2.5 z-10 py-0.5 max-sm:px-3  bg-gray-300 text-black rounded-full font-bold text-lg 
-                                ${isActive ? "bg-blue-500" : ""}
-                                ${isCompleted ? "bg-green-500" : ""}
+                                ${isActive && "bg-blue-500"}
+                                ${isCompleted && "bg-green-500"}
                             `}
                             >
                                     {index + 1}
@@ -119,7 +119,9 @@ const Stepper = () => {
             Next <FaAngleRight size={18} className="mt-0.5"/>
           </button>
         </div>
-        {ActiveComponent && <ActiveComponent />}
+        <main className=" w-full mt-5 overflow-y-scroll no-scrollbar">
+          <div>{ActiveComponent && <ActiveComponent />}</div>
+        </main>
     </div>
   )
 }
