@@ -83,7 +83,11 @@ const Stepper = () => {
                                 ${isCompleted && "bg-green-500"}
                             `}
                             >
-                                    {index + 1}
+                                    {isCompleted ? (
+                                        <span>&#10003;</span>
+                                    ) : (
+                                        <span>{index + 1}</span>
+                                    )}
                             </p>
                             <span className={`text-sm font-medium max-sm:text-xs ${isCompleted ? "text-green-500" : isActive ? "text-blue-500" : ""}`}>{item.name}</span>
                         </div>
@@ -120,7 +124,7 @@ const Stepper = () => {
           </button>
         </div>
         <main className=" w-full mt-5 overflow-y-scroll no-scrollbar">
-          <div>{ActiveComponent && <ActiveComponent />}</div>
+          <div>{ActiveComponent && <ActiveComponent next={handelNext} prev={handelPrev} />}</div>
         </main>
     </div>
   )

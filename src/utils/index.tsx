@@ -4,25 +4,29 @@ import Education from "../components/Data/Education";
 import Skills from "../components/Data/Skills";
 import Summary from "../components/Data/Summary";
 
+export interface Props {
+    next: () => void;
+    prev: () => void;
+}
 export const CONFIG_FILE = [
     {
         name:"Information",
-        Component:()=> <Info/>,
+        Component:({next,prev}:Props)=> <Info next={next} prev={prev}/>,
     },
     {
         name:"Experience",
-        Component:()=> <Experince/>
+        Component:({next,prev}:Props)=> <Experince/>
     },
     {
         name:"Education",
-        Component:()=> <Education/>
+        Component:({next,prev}:Props)=> <Education/>
     },
     {
         name:"Skills",
-        Component:()=> <Skills/>
+        Component:({next,prev}:Props)=> <Skills/>
     },
     {
         name:"Summary",
-        Component:()=> <Summary/>
+        Component:({next,prev}:Props)=> <Summary/>
     }
 ];
