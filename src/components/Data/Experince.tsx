@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Experince = () => {
   return (
     <div>Experince</div>

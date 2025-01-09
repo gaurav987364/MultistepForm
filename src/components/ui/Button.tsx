@@ -17,4 +17,4 @@ const Button = ({name,onClick,purpose,type}:BtnProps) => {
   )
 }
 
-export default Button
+export default Button;
